@@ -60,4 +60,5 @@ function drawLocationCircles(locations){
 
 
 ///EXECUTE
-initialLoad()
+initialLoad();
+drawLocationCircles();
