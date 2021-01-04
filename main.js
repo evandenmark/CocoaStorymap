@@ -18,6 +18,8 @@ function initialLoad(){
 
 	d3.json("./countryShapeData/us.json").then(function(topology){
 
+	// d3.json("https://github.com/evandenmark/CocoaStorymap/blob/master/countryShapeData/us.json").then(function(topology){
+
 		var states = topojson.feature(topology, topology.objects.states);
 		mapSvg.selectAll("path")
 		      .data(states.features)
@@ -35,7 +37,7 @@ function initialLoad(){
 		});
 	});
 
-	drawLocationCircles();
+	setTimeout(drawLocationCircles, 1000);
 }
 
 function drawLocationCircles(locations){
