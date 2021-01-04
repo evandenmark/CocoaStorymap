@@ -1,7 +1,6 @@
 // DEFINE THE MAP
 var screenWidth =  screen.width,
 	screenHeight = screen.height;
-console.log("asdfasdf");
 
 function initialLoad(){
 	//loads the initial files and draws the map
