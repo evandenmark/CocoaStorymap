@@ -29,6 +29,8 @@ function initialLoad(){
 
 		d3.csv("./data.csv").then(function(data){
 			audioData = data;
+			console.log('aaaaa');
+			console.log(audioData);
 
 		});
 	});
