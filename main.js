@@ -34,6 +34,8 @@ function initialLoad(){
 
 		});
 	});
+
+	drawLocationCircles();
 }
 
 function drawLocationCircles(locations){
@@ -61,4 +63,3 @@ function drawLocationCircles(locations){
 
 ///EXECUTE
 initialLoad();
-drawLocationCircles();
