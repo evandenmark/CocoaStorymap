@@ -47,7 +47,7 @@ function drawLocationCircles(locations){
 			    	enter => enter.append("circle"),
 			    	update => update,
 			    	exit => exit.remove()
-		    	);
+		    	)
 		    	.attr("transform", function(d) {
 					var p = projection([d.long, d.lat]);
 					var q = p[1];
