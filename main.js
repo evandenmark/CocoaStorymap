@@ -54,3 +54,7 @@ function drawLocationCircles(locations){
 		    	.attr("r", 10)
 		    	.style("fill", 'blue');
 }
+
+
+///EXECUTE
+initialLoad()
