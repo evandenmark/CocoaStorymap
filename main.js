@@ -9,10 +9,12 @@ function initialLoad(){
 	USA_SCALE = 2000;
 	USA_TRANSLATE = [screenWidth*0.45,screenHeight*0.5];
 
-
+	console.log("AAAA")
 	projection = d3.geoAlbersUsa().scale(USA_SCALE).translate(USA_TRANSLATE);
+	console.log(projection)
 
 	path = d3.geoPath().projection(projection);
+	console.log(path)
 
 	mapSvg = d3.select("#main-map").append("svg")
 					    .attr("width", screenWidth)
@@ -20,6 +22,7 @@ function initialLoad(){
 
 	d3.json("./countryShapeData/us.json").then(function(topology){
 
+		console.log("in json")
 		var states = topojson.feature(topology, topology.objects.states);
 		mapSvg.selectAll("path")
 		      .data(states.features)
