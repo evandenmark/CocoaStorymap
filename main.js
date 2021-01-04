@@ -48,16 +48,16 @@ function drawLocationCircles(locations){
 			    	update => update,
 			    	exit => exit.remove()
 		    	);
-		  //   	.attr("transform", function(d) {
-				// 	var p = projection([d.long, d.lat]);
-				// 	var q = p[1];
-				// 	var r = p[0] ;
-				// 	// return "translate(0,0)";
-				// 	return "translate(" + r +','+q + ")";
-				// })
-				// .attr("class", "locations")
-		  //   	.attr("r", 10)
-		  //   	.style("fill", 'blue');
+		    	.attr("transform", function(d) {
+					var p = projection([d.long, d.lat]);
+					var q = p[1];
+					var r = p[0] ;
+					// return "translate(0,0)";
+					return "translate(" + r +','+q + ")";
+				})
+				.attr("class", "locations")
+		    	.attr("r", 10)
+		    	.style("fill", 'blue');
 }
 
 
