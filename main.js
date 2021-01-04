@@ -35,6 +35,7 @@ function initialLoad(){
 }
 
 function drawLocationCircles(locations){
+	console.log("xxxx");
 	console.log(audioData)
 	mapSvg.selectAll(".locations")
 				.data(audioData)
