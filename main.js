@@ -31,18 +31,13 @@ function initialLoad(){
 
 		d3.csv("./data.csv").then(function(data){
 			audioData = data;
-			console.log('aaaaa');
-			console.log(audioData);
+			drawLocationCircles();
 
 		});
 	});
-
-	setTimeout(drawLocationCircles, 1000);
 }
 
 function drawLocationCircles(locations){
-	console.log("xxxx");
-	console.log(audioData)
 	mapSvg.selectAll(".locations")
 				.data(audioData)
 				.join(
