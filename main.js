@@ -4,7 +4,7 @@ var screenWidth =  screen.width,
 
 //Audio
 var playStatus = false;
-var currentSound; 
+var currentSound = new Audio(); 
 
 function initialLoad(){
 	//loads the initial files and draws the map
@@ -63,10 +63,13 @@ function drawLocationCircles(locations){
 			    		currentSound.pause();
 			    		playStatus = false;
 			    	} 
-			    	var sound = new Audio("/audio"+d.file);
-		    		sound.play();
-		    		playStatus = true;
-		    		currentSound = sound;
+
+			    	if (!currentSound.src.includes(d.file)){
+				    	var sound = new Audio("/audio"+d.file);
+			    		sound.play();
+			    		playStatus = true;
+			    		currentSound = sound;
+			    	}
 		    	})
 		    	.style("fill", 'orange');
 }
