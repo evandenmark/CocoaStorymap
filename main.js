@@ -2,6 +2,10 @@
 var screenWidth =  screen.width,
 	screenHeight = screen.height;
 
+//Audio
+var playStatus = false;
+var currentSound; 
+
 function initialLoad(){
 	//loads the initial files and draws the map
 
@@ -54,7 +58,18 @@ function drawLocationCircles(locations){
 				})
 				.attr("class", "locations")
 		    	.attr("r", 10)
-		    	.style("fill", 'blue');
+		    	.on("click", function(d){
+		    		if (playStatus){
+			    		currentSound.pause();
+			    		playStatus = false;
+			    	} else {
+			    		var sound = new Audio("/audio"+d.file);
+			    		sound.play();
+			    		playStatus = true;
+			    		currentSound = sound;
+			    	}
+		    	})
+		    	.style("fill", 'orange');
 }
 
 
