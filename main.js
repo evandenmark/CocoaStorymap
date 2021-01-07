@@ -68,11 +68,12 @@ function drawLocationCircles(locations){
 		    				currentlyPlaying = false;
 		    			} else{
 		    				//currently playing and click on different circle
+		    				currentSound.pause();
 		    				currentSound = new Audio("./audio"+d.file);
 		    				currentSound.play();
 		    				currentlyPlaying = true;
 		    			}
-		    			
+
 		    		} else {
 		    			//no sound playing
 		    			currentSound = new Audio("./audio"+d.file);
