@@ -61,19 +61,16 @@ function drawLocationCircles(locations){
 		    	.on("click", function(d){
 
 		    		if (currentlyPlaying){
-		    			console.log('A');
 		    			currentSound.pause();
 		    			if (currentSound.src.includes(d.file)){
 		    				//currently playing and click on same circle
 		    				currentlyPlaying = false;
-		    				console.log('B');
 		    				currentSound = new Audio();
 		    			} else{
 		    				//currently playing and click on different circle
 		    				currentSound = new Audio("./audio"+d.file);
 		    				currentSound.play();
 		    				currentlyPlaying = true;
-		    				console.log('C');
 		    			}
 
 		    		} else {
@@ -81,7 +78,6 @@ function drawLocationCircles(locations){
 		    			currentSound = new Audio("./audio"+d.file);
 			    		currentSound.play();
 			    		currentlyPlaying = true;
-			    		console.log('D');
 		    		}
 
 
