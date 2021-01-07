@@ -59,12 +59,19 @@ function drawLocationCircles(locations){
 				.attr("class", "locations")
 		    	.attr("r", 10)
 		    	.on("click", function(d){
+
+
+
+
+
 		    		if (playStatus){
 			    		currentSound.pause();
 			    		playStatus = false;
+			    		console.log("A")
 			    	} 
 
 			    	if (!currentSound.src.includes(d.file)){
+			    		console.log("B")
 				    	var sound = new Audio("./audio"+d.file);
 			    		sound.play();
 			    		playStatus = true;
