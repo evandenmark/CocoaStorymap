@@ -3,7 +3,7 @@ var screenWidth =  screen.width,
 	screenHeight = screen.height;
 
 //Audio
-var playStatus = false;
+var currentlyPlaying = false;
 var currentSound = new Audio(); 
 
 function initialLoad(){
@@ -60,23 +60,39 @@ function drawLocationCircles(locations){
 		    	.attr("r", 10)
 		    	.on("click", function(d){
 
+		    		if (currentlyPlaying){
+
+		    			if (currentSound.src.includes(d.file)){
+		    				//currently playing and click on same circle
+		    				currentSound.pause();
+		    				currentlyPlaying = false;
+		    			} else{
+		    				//currently playing and click on different circle
+		    				currentSound = new Audio("./audio"+d.file);
+		    				currentSound.play();
+		    				currentlyPlaying = true;
+		    			}
+		    			
+		    		} else {
+		    			//no sound playing
+		    			currentSound = new Audio("./audio"+d.file);
+			    		currentSound.play();
+			    		currentlyPlaying = true;
+		    		}
 
 
+		    		// if (currentlyPlaying){
+			    	// 	currentSound.pause();
+			    	// 	currentlyPlaying = false;
+			    	// 	currentSound = new Audio();
+			    	// } 
 
-
-		    		if (playStatus){
-			    		currentSound.pause();
-			    		playStatus = false;
-			    		console.log("A")
-			    	} 
-
-			    	if (!currentSound.src.includes(d.file)){
-			    		console.log("B")
-				    	var sound = new Audio("./audio"+d.file);
-			    		sound.play();
-			    		playStatus = true;
-			    		currentSound = sound;
-			    	}
+			    	// if (!currentSound.src.includes(d.file)){
+			    	// 	console.log("B");
+				    // 	currentSound = new Audio("./audio"+d.file);
+			    	// 	currentSound.play();
+			    	// 	currentlyPlaying = true;
+			    	// }
 		    	})
 		    	.style("fill", 'orange');
 }
