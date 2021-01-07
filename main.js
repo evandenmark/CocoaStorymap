@@ -62,6 +62,7 @@ function drawLocationCircles(locations){
 
 		    		if (currentlyPlaying){
 		    			currentSound.pause();
+
 		    			if (currentSound.src.includes(d.file)){
 		    				//currently playing and click on same circle
 		    				currentlyPlaying = false;
@@ -80,19 +81,6 @@ function drawLocationCircles(locations){
 			    		currentlyPlaying = true;
 		    		}
 
-
-		    		// if (currentlyPlaying){
-			    	// 	currentSound.pause();
-			    	// 	currentlyPlaying = false;
-			    	// 	currentSound = new Audio();
-			    	// } 
-
-			    	// if (!currentSound.src.includes(d.file)){
-			    	// 	console.log("B");
-				    // 	currentSound = new Audio("./audio"+d.file);
-			    	// 	currentSound.play();
-			    	// 	currentlyPlaying = true;
-			    	// }
 		    	})
 		    	.style("fill", 'orange');
 }
