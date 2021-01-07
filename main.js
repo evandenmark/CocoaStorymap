@@ -65,7 +65,7 @@ function drawLocationCircles(locations){
 			    	} 
 
 			    	if (!currentSound.src.includes(d.file)){
-				    	var sound = new Audio("/audio"+d.file);
+				    	var sound = new Audio("./audio"+d.file);
 			    		sound.play();
 			    		playStatus = true;
 			    		currentSound = sound;
