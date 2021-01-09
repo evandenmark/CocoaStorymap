@@ -60,6 +60,7 @@ function drawLocationCircles(locations){
 		    	.attr("r", 10)
 		    	.on("click", function(d){
 
+		    		//handle audio
 		    		if (currentlyPlaying){
 		    			currentSound.pause();
 
@@ -82,7 +83,22 @@ function drawLocationCircles(locations){
 		    		}
 
 		    	})
-		    	.style("fill", 'orange');
+		    	.on('mouseover', function(d, i) {
+			      d3.select(this)
+			        .transition()
+			        .duration(100)
+			        .attr('r', 20)
+			        .attr('fill', '#ff0000');
+			    })
+			    .on('mouseout', function(d, i) {
+			      d3.select(this)
+			        .transition()
+			        .duration(100)
+			        .attr('r', 10)
+			        .attr('fill', '#7FCEFF');
+			    })
+		    	.style("fill", '#7FCEFF')
+		    	.style("stroke", '#0674B9');
 }
 
 
