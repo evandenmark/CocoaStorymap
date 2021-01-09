@@ -1,13 +1,22 @@
-index,name,lat,long,file
-1,Engelheim Vineyards,34.6064,-84.5686,/1_engelheim.m4a
-2,Engelheim Vineyards,34.6064,-84.5686,/2_engelheim.m4a
-3,Tallulah Gorge,34.7427,-83.3965,/3_Tallulah.m4a
-4,Jumping Goat,34.632819,-83.746325,/4_jumpinggoat.m4a
-5,River Arts District,35.5951,-82.5515,/5_AVLriverarts.m4a
-6,Asheville,35.584592,-82.566478,/6_AVLriverarts.m4a
-7,Pisgah National Forest,35.2847,-82.727,/7_pisgah.m4a
-8,Mt. Mitchell,35.765,-82.2652,/8_MtMitchell.m4a
-9,Shenendoah National Park,38.4755,-78.4535,/9_Shenendoah.m4a
-10,King Tire,35.6145,-88.8139,/10_kingtire.m4a
-11,Civic Center,35.6145,-88.8139,/11_civiccenter.m4a
-12,Lubbock,33.5779,-101.8552,/12_lubbock.m4a
+index,name,lat,long,file,date
+1,Engelheim Vineyards,34.6064,-84.5686,/1_engelheim.m4a,11/7/20
+2,Engelheim Vineyards,34.6064,-84.5686,/2_engelheim.m4a,11/7/20
+3,Tallulah Gorge,34.7427,-83.3965,/3_Tallulah.m4a,11/9/20
+4,Jumping Goat,34.632819,-83.746325,/4_jumpinggoat.m4a,11/9/20
+5,River Arts District,35.5951,-82.5515,/5_AVLriverarts.m4a,11/14/20
+6,Asheville,35.584592,-82.566478,/6_AVLriverarts.m4a,11/14/20
+7,Pisgah National Forest,35.2847,-82.727,/7_pisgah.m4a,11/15/20
+8,Mt. Mitchell,35.765,-82.2652,/8_MtMitchell.m4a,11/17/20
+9,Shenendoah National Park,38.4755,-78.4535,/9_Shenendoah.m4a,11/21/20
+10,King Tire,35.6145,-88.8139,/10_kingtire.m4a,
+11,Civic Center,35.6145,-88.8139,/11_civiccenter.m4a,
+12,Lubbock,33.5779,-101.8552,/12_lubbock.m4a,
+13,Muir Woods,37.897,-122.5811,/13_MuirWoods.m4a,12/19/20
+14,Bolinas,37.9094,-122.6864,/14_bolinas.m4a,12/20/20
+15,Ventura,34.2805,-119.2945,/15_ventura.m4a,12/23/20
+16,Camp Walpi,34.240683,-116.26136,/16_jtnp1.m4a,12/25/20
+17,Joshua Tree,34.012273,-116.323743,/17_jtnp2.m4a,12/30/20
+18,Hidden Valley,33.99835,-116.069413,/18_lastsunset.m4a,12/31/20
+19,Iron Door,33.823121,-115.659126,/19_irondoor.m4a,12/31/20
+20,Mars,33.358032,-115.71,/20_mars.m4a,1/3/21
+21,Bombay Beach,33.354127,-115.746728,/21_bombaybeach.m4a,1/7/21
