@@ -10,7 +10,7 @@ function initialLoad(){
 	//loads the initial files and draws the map
 
 	USA_SCALE = 2000;
-	USA_TRANSLATE = [screenWidth*0.45,screenHeight*0.5];
+	USA_TRANSLATE = [screenWidth*0.5,screenHeight*0.5];
 
 	projection = d3.geoAlbersUsa().scale(USA_SCALE).translate(USA_TRANSLATE);
 
@@ -98,7 +98,8 @@ function drawLocationCircles(locations){
 			        .attr('fill', '#7FCEFF');
 			    })
 		    	.style("fill", '#7FCEFF')
-		    	.style("stroke", '#0674B9');
+		    	.style("stroke", '#0674B9')
+		    	.style("stroke-width", 3);
 }
 
 
