@@ -46,7 +46,7 @@ function drawLocationCircles(locations){
 	var tooltip = d3.select('body')
 		.append('g')
 		.attr('id', 'tooltip')
-		.attr('style', 'position: absolute; opacity: 0; font-family: Helvetica');
+		.attr('style', 'position: absolute; opacity: 0; font-family: Helvetica;');
 
 	var tooltipName = tooltip.append('div')
 								.attr('id', 'tooltipName')
@@ -54,7 +54,50 @@ function drawLocationCircles(locations){
 
 	var tooltipDate = tooltip.append('div')
 								.attr('id', 'tooltipDate')
-								.attr('style', 'font-size: 12px');;
+								.attr('style', 'font-size: 12px');
+
+	//create triangle and pause
+	var triangleWrapper = d3.select('body')
+							.append('svg')
+							.attr("id", 'triangleWrapper')
+							.attr('pointer-events', 'none')
+							.attr('width', 100)
+							.attr('height', 100);
+
+	var sym =  d3.symbol().type(d3.symbolTriangle).size(150); 
+
+			        
+    d3.select("#triangleWrapper") 
+        .append("path")
+        .attr("d", sym) 
+        .attr("fill", "#0674B9")
+        .attr('transform', 'translate(50,50) rotate(90)')
+        .attr('id', 'triangle')
+        .style('opacity', 1);
+
+
+   	d3.select("#triangleWrapper").append('rect')
+        .attr('width', 4)
+        .attr('height', 15)
+        .attr('x', 0)
+        .attr('y', 0)
+        .attr('class', 'pause')
+        .attr('transform', 'translate(44,42)')
+        .style('opacity', 0)
+        .attr('fill', '#0674B9');
+
+    d3.select("#triangleWrapper").append('rect')
+        .attr('width', 4)
+        .attr('height', 15)
+        .attr('x', 0)
+        .attr('y', 0)
+        .attr('class', 'pause')
+        .attr('fill', '#0674B9')
+        .style('opacity', 0)
+        .attr('transform', 'translate(52,42)');
+
+
+
 
 
 	mapSvg.selectAll(".locations")
@@ -74,6 +117,9 @@ function drawLocationCircles(locations){
 				.attr("class", "locations")
 				.attr('id', function(d){return d.index})
 		    	.attr("r", 10)
+		    	.style("fill", '#7FCEFF')
+		    	.style("stroke", '#0674B9')
+		    	.style("stroke-width", 3)
 		    	.on("click", function(d){
 
 
@@ -85,11 +131,19 @@ function drawLocationCircles(locations){
 		    				//currently playing and click on same circle
 		    				currentlyPlaying = false;
 		    				currentSound = new Audio();
+
+		    				//pause button clicked
+				    		d3.select('#triangle')
+				    			.style('opacity', 1);
+
+				    		d3.selectAll('.pause')
+				    			.style('opacity', 0);
 		    			} else{
 		    				//currently playing and click on different circle
 		    				currentSound = new Audio("./audio"+d.file);
 		    				currentSound.play();
 		    				currentlyPlaying = true;
+
 		    			}
 
 		    		} else {
@@ -97,7 +151,16 @@ function drawLocationCircles(locations){
 		    			currentSound = new Audio("./audio"+d.file);
 			    		currentSound.play();
 			    		currentlyPlaying = true;
+
+			    		//play button clicked
+			    		d3.select('#triangle')
+			    			.style('opacity', 0);
+
+			    		d3.selectAll('.pause')
+			    			.style('opacity', 1);
 		    		}
+
+		    		
 
 		    	})
 		    	// .on('mouseover', mouseover )
@@ -120,10 +183,22 @@ function drawLocationCircles(locations){
 				        .duration(100)
 				        .attr('r', 20)
 				        .attr('fill', '#ff0000');
+
+				    //move triangle
+				    var [transX, transY] = d3.select(this).attr('transform').split('(')[1].split(')')[0].split(',');
+				    transY = transY - screenHeight - 50;
+				    transX = transX - 50;
+				    
+				    var transform = 'translate('+transX+','+transY+')'
+
+			        
+			        setTimeout(function(){appearSelection(transform, '#triangleWrapper')}, 75); 
 					})
 
 			    .on('mouseout', function(){
-			    	d3.select('#tooltip').style('opacity', 0)
+			    	//remove tooltip and triangle
+			    	d3.select('#tooltip').style('opacity', 0);
+			    	d3.select('#triangleWrapper').style('opacity', 0);
 
 			    	//make circle small
 			    	d3.select(this)
@@ -136,13 +211,19 @@ function drawLocationCircles(locations){
 					d3.select('#tooltip')
 					.style('left', d3.event.pageX+20 + 'px')
 					.style('top', d3.event.pageY+1 + 'px')
-					})
-
-		    	.style("fill", '#7FCEFF')
-		    	.style("stroke", '#0674B9')
-		    	.style("stroke-width", 3);
+					});
 }
 
+function appearSelection(transform, selectionID){
+	d3.select(selectionID) 
+    	.attr('transform', transform)
+    	.style('opacity', 1); 
+}
+
+function disappearSelection(selectionID){
+	d3.select(selectionID)
+		.attr('opacity', 0);
+}
 
 ///EXECUTE
 initialLoad();
