@@ -73,7 +73,7 @@ function drawLocationCircles(locations){
         .attr("fill", "#0674B9")
         .attr('transform', 'translate(50,50) rotate(90)')
         .attr('id', 'triangle')
-        .style('opacity', 1);
+        .style('opacity', 0);
 
 
    	d3.select("#triangleWrapper").append('rect')
@@ -144,6 +144,12 @@ function drawLocationCircles(locations){
 		    				currentSound.play();
 		    				currentlyPlaying = true;
 
+		    				d3.select('#triangle')
+			    			.style('opacity', 0);
+
+				    		d3.selectAll('.pause')
+				    			.style('opacity', 1);
+
 		    			}
 
 		    		} else {
@@ -193,7 +199,24 @@ function drawLocationCircles(locations){
 
 			        
 			        setTimeout(function(){appearSelection(transform, '#triangleWrapper')}, 75); 
-					})
+					
+
+		    		if (currentSound.src.includes(d.file)){
+		    			//current song is same as hover over
+		    			d3.select('#triangle')
+				    		.style('opacity', 0);
+
+			    		d3.selectAll('.pause')
+			    			.style('opacity', 1);
+		    		} else{
+		    			//current song is different than hover over
+		    			d3.select('#triangle')
+				    		.style('opacity', 1);
+
+			    		d3.selectAll('.pause')
+			    			.style('opacity', 0);
+		    		}
+		    	})
 
 			    .on('mouseout', function(){
 			    	//remove tooltip and triangle
