@@ -1,6 +1,6 @@
 // DEFINE THE MAP
 var screenWidth =  screen.width,
-	screenHeight = screen.height*0.88;
+	screenHeight = screen.height;
 
 //Audio
 var currentlyPlaying = false;
