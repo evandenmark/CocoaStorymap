@@ -108,6 +108,8 @@ function drawLocationCircles(locations){
 			    	exit => exit.remove()
 		    	)
 		    	.attr("transform", function(d) {
+		    		console.log("data:");
+		    		console.log(d);
 					var p = projection([d.long, d.lat]);
 					var q = p[1];
 					var r = p[0] ;
