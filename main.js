@@ -9,7 +9,7 @@ var currentSound = new Audio();
 function initialLoad(){
 	//loads the initial files and draws the map
 
-	USA_SCALE = 2000;
+	USA_SCALE = 1500;
 	USA_TRANSLATE = [screenWidth*0.5,screenHeight*0.5];
 
 	projection = d3.geoAlbersUsa().scale(USA_SCALE).translate(USA_TRANSLATE);
