@@ -111,6 +111,7 @@ function drawLocationCircles(locations){
 		    		console.log("data:");
 		    		console.log(d);
 					var p = projection([d.long, d.lat]);
+					console.log(p);
 					var q = p[1];
 					var r = p[0] ;
 					// return "translate(0,0)";
