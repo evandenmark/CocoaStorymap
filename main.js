@@ -23,23 +23,15 @@ function initialLoad(){
 					    .attr("width", screenWidth)
 					    .attr("height", screenHeight)
 
-	d3.json("https://gist.githubusercontent.com/josecarlosgonz/06654c2c0692923044bc/raw/b53521132a0329992286208f3f26ac6bddd991a5/states.json", function(error, mx) {
-	  mapSvg.append("g")
-	      .attr("class", "municipalities")
-	    .selectAll("path")
-	      .data(topojson.feature(mx, mx.objects.shp_vic).geometries)
-	    .enter().append("path")
-	      .attr("d", path)
-	    .append("title")
-	      .text(function(d) { return d.properties.name; });
 
-	});
+	console.log("aaaa");
 
 	// d3.json("./countryShapeData/us.json").then(function(topology){
 	//uncomment the below link when pushing
-	d3.json("https://raw.githubusercontent.com/evandenmark/CocoaStorymap/master/countryShapeData/us.json").then(function(topology){
+	// d3.json("https://raw.githubusercontent.com/evandenmark/CocoaStorymap/master/countryShapeData/us.json").then(function(topology){
+	d3.json("https://gist.githubusercontent.com/michellechandra/0b2ce4923dc9b5809922/raw/a476b9098ba0244718b496697c5b350460d32f99/us-states.json").then(function(states){
 
-		var states = topojson.feature(topology, topology.objects.states);
+		// var states = topojson.feature(topology, topology.objects.states);
 		mapSvg.selectAll("path")
 		      .data(states.features)
 		      .enter().append("path")
