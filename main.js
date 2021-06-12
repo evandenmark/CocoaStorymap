@@ -23,6 +23,18 @@ function initialLoad(){
 					    .attr("width", screenWidth)
 					    .attr("height", screenHeight)
 
+	d3.json("https://gist.githubusercontent.com/josecarlosgonz/06654c2c0692923044bc/raw/b53521132a0329992286208f3f26ac6bddd991a5/states.json", function(error, mx) {
+	  mapSvg.append("g")
+	      .attr("class", "municipalities")
+	    .selectAll("path")
+	      .data(topojson.feature(mx, mx.objects.shp_vic).geometries)
+	    .enter().append("path")
+	      .attr("d", path)
+	    .append("title")
+	      .text(function(d) { return d.properties.name; });
+
+	});
+
 	// d3.json("./countryShapeData/us.json").then(function(topology){
 	//uncomment the below link when pushing
 	d3.json("https://raw.githubusercontent.com/evandenmark/CocoaStorymap/master/countryShapeData/us.json").then(function(topology){
