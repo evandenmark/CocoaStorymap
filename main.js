@@ -24,7 +24,7 @@ function initialLoad(){
 					    .attr("height", screenHeight)
 
 
-	console.log("aaaa");
+	console.log("cccc");
 
 	// d3.json("./countryShapeData/us.json").then(function(topology){
 	//uncomment the below link when pushing
