@@ -1,9 +1,4 @@
-
-
-function initialLoad(){
-	//loads the initial files and draws the map
-
-	// DEFINE THE MAP
+// DEFINE THE MAP
 	var screenWidth =  screen.width,
 		screenHeight = screen.height;
 		console.log(screenWidth);
@@ -11,6 +6,9 @@ function initialLoad(){
 	//Audio
 	var currentlyPlaying = false;
 	var currentSound = new Audio(); 
+
+function initialLoad(){
+	//loads the initial files and draws the map
 
 	USA_SCALE = 1500;
 	USA_TRANSLATE = [screenWidth*0.5,screenHeight*0.5];
