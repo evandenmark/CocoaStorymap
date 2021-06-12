@@ -1,13 +1,16 @@
-// DEFINE THE MAP
-var screenWidth =  screen.width,
-	screenHeight = screen.height;
 
-//Audio
-var currentlyPlaying = false;
-var currentSound = new Audio(); 
 
 function initialLoad(){
 	//loads the initial files and draws the map
+
+	// DEFINE THE MAP
+	var screenWidth =  screen.width,
+		screenHeight = screen.height;
+		console.log(screenWidth);
+
+	//Audio
+	var currentlyPlaying = false;
+	var currentSound = new Audio(); 
 
 	USA_SCALE = 1500;
 	USA_TRANSLATE = [screenWidth*0.5,screenHeight*0.5];
@@ -34,6 +37,7 @@ function initialLoad(){
 			      .attr("stroke", "#fff");
 
 		d3.csv("https://raw.githubusercontent.com/evandenmark/CocoaStorymap/master/data.csv").then(function(data){
+		//uncomment when final push
 		// d3.csv("./data.csv").then(function(data){
 			audioData = data;
 			drawLocationCircles();
@@ -109,10 +113,7 @@ function drawLocationCircles(locations){
 			    	exit => exit.remove()
 		    	)
 		    	.attr("transform", function(d) {
-		    		console.log("data:");
-		    		console.log(d);
 					var p = projection([d.long, d.lat]);
-					console.log(p);
 					var q = p[1];
 					var r = p[0] ;
 					// return "translate(0,0)";
@@ -253,4 +254,4 @@ function disappearSelection(selectionID){
 }
 
 ///EXECUTE
-initialLoad();
+setTimeout(initialLoad, 300);
