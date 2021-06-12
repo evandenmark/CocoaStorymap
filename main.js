@@ -24,8 +24,6 @@ function initialLoad(){
 					    .attr("height", screenHeight)
 
 
-	console.log("fffff");
-
 	// d3.json("./countryShapeData/us.json").then(function(topology){
 	//uncomment the below link when pushing
 	// d3.json("https://raw.githubusercontent.com/evandenmark/CocoaStorymap/master/countryShapeData/us.json").then(function(topology){
