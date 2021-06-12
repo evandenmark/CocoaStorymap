@@ -10,7 +10,7 @@ function initialLoad(){
 	//loads the initial files and draws the map
 
 	USA_SCALE = 1500;
-	USA_TRANSLATE = [screenWidth*0.5,screenHeight*0.2];
+	USA_TRANSLATE = [screenWidth*0.5,screenHeight*0.5];
 
 	projection = d3.geoAlbersUsa().scale(USA_SCALE).translate(USA_TRANSLATE);
 
@@ -20,9 +20,9 @@ function initialLoad(){
 					    .attr("width", screenWidth)
 					    .attr("height", screenHeight)
 
-	d3.json("./countryShapeData/us.json").then(function(topology){
-
-	// d3.json("https://github.com/evandenmark/CocoaStorymap/blob/master/countryShapeData/us.json").then(function(topology){
+	// d3.json("./countryShapeData/us.json").then(function(topology){
+	//uncomment the below link when pushing
+	d3.json("https://raw.githubusercontent.com/evandenmark/CocoaStorymap/master/countryShapeData/us.json").then(function(topology){
 
 		var states = topojson.feature(topology, topology.objects.states);
 		mapSvg.selectAll("path")
@@ -33,7 +33,8 @@ function initialLoad(){
 			      .attr("fill", "#efefef")
 			      .attr("stroke", "#fff");
 
-		d3.csv("./data.csv").then(function(data){
+		d3.csv("https://raw.githubusercontent.com/evandenmark/CocoaStorymap/master/data.csv").then(function(data){
+		// d3.csv("./data.csv").then(function(data){
 			audioData = data;
 			drawLocationCircles();
 
