@@ -13,7 +13,7 @@ function initialLoad(){
 	USA_SCALE = 1500;
 	USA_TRANSLATE = [screenWidth*0.5,screenHeight*0.5];
 
-	projection = d3.geoAlbersUsa().scale(USA_SCALE).translate(USA_TRANSLATE);
+	projection = d3.geoAlbers().scale(USA_SCALE).translate(USA_TRANSLATE);
 
 	path = d3.geoPath().projection(projection);
 
