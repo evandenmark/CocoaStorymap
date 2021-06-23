@@ -11,7 +11,7 @@
 function initialLoad(){
 	//loads the initial files and draws the map
 
-	USA_SCALE = 1700;
+	USA_SCALE = screen.width;
 	USA_TRANSLATE = [divWidth*0.5,divHeight*0.45];
 
 	projection = d3.geoAlbers().scale(USA_SCALE).translate(USA_TRANSLATE);
