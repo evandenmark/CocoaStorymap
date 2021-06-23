@@ -3913,9 +3913,10 @@ input, select, textarea {
 /*progress bar*/
 .progressBar {
   width: 0.1px;
-  height: 15%;
+  height: 15px;
   background: #002158;
   transition: width .1s linear;
+  position: absolute;
 }
 
 .journalContainer{
