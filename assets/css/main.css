@@ -3911,12 +3911,19 @@ input, select, textarea {
 		}
 
 /*progress bar*/
-.progressBar {
+#progressBar0 {
   width: 0.1px;
-  height: 15px;
-  background: #002158;
+  height: 7em;
+  background: #c4f4fc;
   transition: width .1s linear;
-  position: absolute;
+}
+
+.progressBar:not(#progressBar0){
+  	width: 0.1px;
+	height: 15px;
+	background: #002158;
+	transition: width .1s linear;
+	position: absolute;
 }
 
 .journalContainer{

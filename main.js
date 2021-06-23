@@ -1,6 +1,6 @@
 // DEFINE THE MAP
 	var divWidth = document.getElementById("main-map").offsetWidth;
-	var divHeight = divWidth*0.7;
+	var divHeight = divWidth*0.6;
 	var screenWidth =  screen.width,
 		screenHeight = screen.height;
 
@@ -12,7 +12,7 @@ function initialLoad(){
 	//loads the initial files and draws the map
 
 	USA_SCALE = screen.width;
-	USA_TRANSLATE = [divWidth*0.5,divHeight*0.45];
+	USA_TRANSLATE = [divWidth*0.5,divHeight*0.48];
 
 	projection = d3.geoAlbers().scale(USA_SCALE).translate(USA_TRANSLATE);
 
@@ -171,6 +171,7 @@ function drawLocationCircles(locations){
 			    		d3.selectAll('.pause')
 			    			.style('opacity', 1);
 		    		}
+		    		audioBar('0');
 
 		    		
 
