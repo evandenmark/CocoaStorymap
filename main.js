@@ -254,5 +254,30 @@ function disappearSelection(selectionID){
 		.attr('opacity', 0);
 }
 
+function journalButtonClicked(filename){
+
+	journalFolder = './audio/journal/';
+	if (currentlyPlaying){
+		//some sound is playing
+		currentSound.pause();
+
+		if (currentSound.src.includes(filename)){
+			//current sound is the clicked on sound
+			currentlyPlaying = false;
+			currentSound = new Audio();
+		}else{
+			//current sound is different than clicked on sound
+			currentSound = new Audio(journalFolder+filename);
+			currentSound.play();
+			currentlyPlaying = true;
+		}
+	} else{
+		//no sound is playing
+		currentSound = new Audio(journalFolder+filename);
+		currentSound.play();
+		currentlyPlaying = true;
+	}
+}
+
 ///EXECUTE
 setTimeout(initialLoad, 300);
