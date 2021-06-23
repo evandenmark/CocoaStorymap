@@ -301,7 +301,7 @@ function audioBar(index){
 	var advance = function(duration, element) {
 	  var progress = document.getElementById("progressBar"+index);
 	  increment = 10/duration
-	  percent = Math.min(increment * element.currentTime * 10, 100)*1.1;
+	  percent = Math.min(increment * element.currentTime * 10, 100);
 	  progress.style.width = percent+'%'
 	  startTimer(duration, element);
 	}
