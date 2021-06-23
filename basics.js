@@ -1,2 +1,12 @@
 var audioData;
 var mapSvg;
+
+var CIRCLE_RADIUS_LARGE;
+var CIRCLE_RADIUS_SMALL;
+
+if (screen.width > 1000){
+	CIRCLE_RADIUS_LARGE = 20;
+} else{
+	CIRCLE_RADIUS_LARGE = 10;
+}
+CIRCLE_RADIUS_SMALL = CIRCLE_RADIUS_LARGE/2;

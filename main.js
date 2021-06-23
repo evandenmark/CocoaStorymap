@@ -122,7 +122,7 @@ function drawLocationCircles(locations){
 				})
 				.attr("class", "locations")
 				.attr('id', function(d){return d.index})
-		    	.attr("r", 10)
+		    	.attr("r", CIRCLE_RADIUS_SMALL)
 		    	.style("fill", '#7FCEFF')
 		    	.style("stroke", '#0674B9')
 		    	.style("stroke-width", 3)
@@ -193,7 +193,7 @@ function drawLocationCircles(locations){
 		    		d3.select(this)
 				        .transition()
 				        .duration(100)
-				        .attr('r', 20)
+				        .attr('r', CIRCLE_RADIUS_LARGE)
 				        .attr('fill', '#ff0000');
 
 				    //move triangle
@@ -233,7 +233,7 @@ function drawLocationCircles(locations){
 			    	d3.select(this)
 			    		.transition()
 			    		.duration(100)
-			    		.attr('r', 10)
+			    		.attr('r', CIRCLE_RADIUS_SMALL)
 			    	})
 
 			    .on('mousemove', function() {
