@@ -1,6 +1,6 @@
 // DEFINE THE MAP
 	var divWidth = document.getElementById("main-map").offsetWidth;
-	var divHeight = divWidth*0.8;
+	var divHeight = divWidth*0.7;
 	var screenWidth =  screen.width,
 		screenHeight = screen.height;
 
@@ -254,9 +254,11 @@ function disappearSelection(selectionID){
 		.attr('opacity', 0);
 }
 
-function journalButtonClicked(filename){
-
+function journalButtonClicked(button, filename){
+	
 	journalFolder = './audio/journal/';
+	changeJournalButtonText();
+
 	if (currentlyPlaying){
 		//some sound is playing
 		currentSound.pause();
@@ -270,13 +272,24 @@ function journalButtonClicked(filename){
 			currentSound = new Audio(journalFolder+filename);
 			currentSound.play();
 			currentlyPlaying = true;
+			button.innerText = "Pause";
 		}
 	} else{
 		//no sound is playing
 		currentSound = new Audio(journalFolder+filename);
 		currentSound.play();
 		currentlyPlaying = true;
+		button.innerText = "Pause";
 	}
+	
+}
+
+function changeJournalButtonText(){
+	var buttons = document.getElementsByClassName("journalButton");
+	for (var i = 0; i < buttons.length; i++) { 
+		buttons[i].innerText = "Play";
+	}
+
 }
 
 ///EXECUTE
