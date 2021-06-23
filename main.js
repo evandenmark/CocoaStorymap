@@ -1,7 +1,8 @@
 // DEFINE THE MAP
+	var divWidth = document.getElementById("main-map").offsetWidth;
+	var divHeight = divWidth*0.8;
 	var screenWidth =  screen.width,
 		screenHeight = screen.height;
-		console.log(screenWidth);
 
 	//Audio
 	var currentlyPlaying = false;
@@ -11,15 +12,15 @@ function initialLoad(){
 	//loads the initial files and draws the map
 
 	USA_SCALE = 1800;
-	USA_TRANSLATE = [screenWidth*0.5,screenHeight*0.45];
+	USA_TRANSLATE = [divWidth*0.5,divHeight*0.45];
 
 	projection = d3.geoAlbers().scale(USA_SCALE).translate(USA_TRANSLATE);
 
 	path = d3.geoPath().projection(projection);
 
 	mapSvg = d3.select("#main-map").append("svg")
-					    .attr("width", screenWidth)
-					    .attr("height", screenHeight)
+					    .attr("width", divWidth)
+					    .attr("height", divHeight)
 
 
 	// d3.json("./countryShapeData/us.json").then(function(topology){
