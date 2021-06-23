@@ -125,7 +125,7 @@ function drawLocationCircles(locations){
 		    	.attr("r", CIRCLE_RADIUS_SMALL)
 		    	.style("fill", '#7FCEFF')
 		    	.style("stroke", '#0674B9')
-		    	.style("stroke-width", 3)
+		    	.style("stroke-width", CIRCLE_RADIUS_SMALL/5)
 		    	.on("click", function(d){
 
 
