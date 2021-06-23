@@ -57,7 +57,12 @@
 							<div class="content">
 								<div class="inner">
 									<h2>Sed ipsum dolor</h2>
-									<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus.</p>
+									<p>The screen width is </p>
+									<p id="demo"></p>
+									<script>
+									document.getElementById("demo").innerHTML = screen.width;
+									</script>
+
 									<ul class="actions">
 										<li><a href="generic.html" class="button">Learn more</a></li>
 									</ul>
@@ -69,7 +74,11 @@
 							<div class="content">
 								<div class="inner">
 									<h2>Feugiat consequat</h2>
-									<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus.</p>
+									<p>The section width is </p>
+									<p id="demo2"></p>
+									<script>
+									document.getElementById("demo2").innerHTML = document.getElementById("storymap").offsetWidth;
+									</script>
 									<ul class="actions">
 										<li><a href="generic.html" class="button">Learn more</a></li>
 									</ul>
@@ -81,7 +90,11 @@
 							<div class="content">
 								<div class="inner">
 									<h2>Ultricies aliquam</h2>
-									<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus.</p>
+									<p>The div width is </p>
+									<p id="demo3"></p>
+									<script>
+									document.getElementById("demo3").innerHTML = document.getElementById("main-map").offsetWidth;
+									</script>
 									<ul class="actions">
 										<li><a href="generic.html" class="button">Learn more</a></li>
 									</ul>
