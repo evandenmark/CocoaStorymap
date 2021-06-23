@@ -2168,10 +2168,10 @@ input, select, textarea {
 			}
 
 		.features.inactive section .icon {
-			-moz-transform: scale(0.5);
-			-webkit-transform: scale(0.5);
-			-ms-transform: scale(0.5);
-			transform: scale(0.5);
+			-moz-transform: scale(1);
+			-webkit-transform: scale(1);
+			-ms-transform: scale(1);
+			transform: scale(1);
 			opacity: 0;
 		}
 
@@ -2497,7 +2497,7 @@ input, select, textarea {
 			font-style: normal;
 			font-variant: normal;
 			text-rendering: auto;
-			line-height: 1;
+			line-height: 3;
 			text-transform: none !important;
 			font-family: 'Font Awesome 5 Free';
 			font-weight: 400;
@@ -2520,8 +2520,8 @@ input, select, textarea {
 		}
 
 		.icon.major {
-			width: 2.5em;
-			height: 2.5em;
+			width: 5em;
+			height: 5em;
 			display: block;
 			background: #005681;
 			border-radius: 100%;
@@ -2807,11 +2807,12 @@ input, select, textarea {
 	ul.icons {
 		cursor: default;
 		list-style: none;
-		padding-left: 0;
+
+		text-align: center;
 	}
 
 		ul.icons li {
-			display: inline-block;
+			text-align: center;
 			padding: 0 0.75em 0 0;
 		}
 
