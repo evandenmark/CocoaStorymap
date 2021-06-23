@@ -254,7 +254,7 @@ function disappearSelection(selectionID){
 		.attr('opacity', 0);
 }
 
-function journalButtonClicked(button, filename){
+function journalButtonClicked(button, filename,index){
 	
 	journalFolder = './audio/journal/';
 	changeJournalButtonText();
@@ -281,8 +281,37 @@ function journalButtonClicked(button, filename){
 		currentlyPlaying = true;
 		button.innerText = "Pause";
 	}
+	audioBar(index);
 	
 }
+
+function audioBar(index){
+	var timer;
+	var percent = 0;
+	currentSound.addEventListener("playing", function(_event) {
+	  var duration = _event.target.duration;
+	  advance(duration, currentSound);
+	});
+
+	currentSound.addEventListener("pause", function(_event) {
+	  clearTimeout(timer);
+	});
+
+	var advance = function(duration, element) {
+	  var progress = document.getElementById("progressBar"+index);
+	  increment = 10/duration
+	  percent = Math.min(increment * element.currentTime * 10, 100)*1.1;
+	  progress.style.width = percent+'%'
+	  startTimer(duration, element);
+	}
+	var startTimer = function(duration, element){ 
+	  if(percent < 100) {
+	    timer = setTimeout(function (){advance(duration, element)}, 100);
+	  }
+	}
+}
+
+
 
 function changeJournalButtonText(){
 	var buttons = document.getElementsByClassName("journalButton");
